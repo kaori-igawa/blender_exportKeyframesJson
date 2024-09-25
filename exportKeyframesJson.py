@@ -17,14 +17,12 @@ def exportKeyframesJson(action_name):
     
     with open(fileDir + '/keyframes.json', 'w') as f:
         json.dump(keyframes, f, indent=2)
-    
-    return keyframes
 
 
 selectedObj = bpy.context.selected_objects
 
 # material node action
-print(exportKeyframesJson(selectedObj[0].data.materials[0].node_tree.animation_data.action.name))
+#exportKeyframesJson(selectedObj[0].data.materials[0].node_tree.animation_data.action.name)
 
 # object action
-#print(exportKeyframesJson(selectedObj[0].animation_data.action.name))
+exportKeyframesJson(selectedObj[0].animation_data.action.name)
